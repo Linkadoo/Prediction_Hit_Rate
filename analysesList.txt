@@ -1,0 +1,10 @@
+Name:
+Bob Ross
+Analyses:
+OMXS ABB 2015.11.05 Technical 205.33 196.30
+OMXS SAAB 2015.11.09 Technical 250.33 222.30
+
+Name:
+Me
+Analyses:
+OMXS Autoliv 2012.11.11 Technical 100 98.3
