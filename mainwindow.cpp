@@ -5,7 +5,9 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    store = new Storager();
     ui->setupUi(this);
+    connect(store, SIGNAL(print(const QString)), this, SLOT(onPrint(QString)));
 }
 
 MainWindow::~MainWindow()
@@ -22,4 +24,18 @@ void MainWindow::on_storeButton_clicked(){
     else{
         ui->labelDate->setText("Fail!");
     }
+}
+
+void MainWindow::on_testButton1_clicked(){
+    int temp = store->analysts.size();
+    MainWindow::onPrint(QString::fromStdString(std::to_string(temp)));
+}
+void MainWindow::on_testButton2_clicked(){
+    int temp = store->analysts[0]->analyses.size();
+    MainWindow::onPrint(QString::fromStdString(std::to_string(temp)));
+}
+
+
+void MainWindow::onPrint(QString str){
+    ui->labelStopLoss->setText(str);
 }

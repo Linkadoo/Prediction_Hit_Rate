@@ -2,15 +2,15 @@
 #define STORAGER_H
 
 #include <QObject>
-
+#include "analyser.h"
 class Storager : public QObject
 {
     Q_OBJECT
 public:
-    explicit Storager(QObject *parent = 0);
-
+    Storager(QObject *parent = 0);
+    std::vector<Analyser*> analysts;
 signals:
-
+void print(QString);
 public slots:
 };
 
